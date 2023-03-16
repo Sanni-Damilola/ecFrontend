@@ -19,7 +19,7 @@ export const signup = async ({ name, email, password, userName }: any) => {
 
 export const signin = async ({ email, password }: any) => {
   return await axios
-    .post(`${localUrl}/singin`, {
+    .post(`${localUrl}/signin`, {
       email,
       password,
     })
