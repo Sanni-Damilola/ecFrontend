@@ -43,13 +43,13 @@ const SignUp = () => {
     mutationFn: signup,
 
     onSuccess: (myData) => {
-      // dispatch(User(myData.data));
-      console.log("herer are the data",myData.data);
+      dispatch(User(myData.data));
     },
   });
 
   const Submit = handleSubmit(async (data) => {
     posting.mutate(data);
+    reset()
   });
 
   return (
@@ -84,11 +84,11 @@ const SignUp = () => {
               />
             </Input>
             <Input>
-              <p>Full Name</p>
+              <p>User Name</p>
               <input
                 {...register("userName")}
                 type="name"
-                placeholder="full name"
+                placeholder="User name"
               />
             </Input>
             <Input>
@@ -184,7 +184,8 @@ const Btn = styled.button`
   }
 
   @media screen and (max-width: 500px) {
-    padding: 10px 100px;
+    padding: none;
+    width: 290px;
   }
 `;
 const Keep = styled.div`
