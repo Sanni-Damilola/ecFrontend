@@ -10,8 +10,8 @@ import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { signup } from "../../Api/Api";
 import { IuserData } from "../../interface/UserInterface";
-import { signup } from "../../Api/Ap.i";
 import { User } from "../../Global/ReduxState/State";
 import { UseAppDispach } from "../../Global/ReduxState/Store";
 import { Link } from "react-router-dom";
@@ -39,17 +39,18 @@ const SignUp = () => {
   });
 
   const posting = useMutation({
-    mutationKey: ["user"],
+    mutationKey: ["euser"],
     mutationFn: signup,
 
     onSuccess: (myData) => {
       dispatch(User(myData.data));
+      console.log(myData.data);
     },
   });
 
   const Submit = handleSubmit(async (data) => {
     posting.mutate(data);
-    reset()
+    reset();
   });
 
   return (
@@ -189,7 +190,7 @@ const Btn = styled.button`
   }
 `;
 const Keep = styled.div`
-  color: #b3b8c9;
+  color: #999ba1;
 `;
 const Icons = styled.div`
   color: lightgrey;
@@ -235,7 +236,8 @@ const Div1 = styled.div`
   }
 `;
 const Div2 = styled.div`
-  color: #ced1da;
+  color: #999ba1;
+
   font-weight: 600;
 
   @media screen and (max-width: 500px) {

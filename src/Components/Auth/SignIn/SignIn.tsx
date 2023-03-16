@@ -2,16 +2,58 @@
 
 import React from "react";
 import styled from "styled-components";
-import pic from "../../images/logo.png";
 import { FcGoogle } from "react-icons/fc";
 import { RxBox } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query";
+import { IuserData } from "../../interface/UserInterface";
+import { User } from "../../Global/ReduxState/State";
+import { UseAppDispach } from "../../Global/ReduxState/Store";
+import { signin } from "../../Api/Api";
 
 const SignIn = () => {
+  const dispatch = UseAppDispach();
+  const schema = yup
+    .object({
+      email: yup.string().required(),
+      password: yup.string().min(9).required(),
+    })
+    .required();
+
+  type formData = yup.InferType<typeof schema>;
+
+  const {
+    handleSubmit,
+    formState: { errors },
+    reset,
+    register,
+  } = useForm<formData>({
+    resolver: yupResolver(schema),
+  });
+
+  const posting = useMutation({
+    mutationKey: ["euser"],
+    mutationFn: signin,
+
+    onSuccess: (myData) => {
+      dispatch(User(myData.data));
+      // console.log(myData.data);
+    },
+  });
+
+  const Submit = handleSubmit(async (data) => {
+    posting.mutate(data);
+    reset();
+  });
+
   return (
     <div>
       <Container>
-        <Card>
+        <Card onSubmit={Submit}>
           <Text1>Sign in to your account</Text1>
           <Text2>Login to your account for a faster checkout</Text2>
           <InputG>
@@ -31,11 +73,19 @@ const SignIn = () => {
           <InputHold>
             <Input>
               <p>Your Email</p>
-              <input type="text" placeholder="Enter your Email" />
+              <input
+                {...register("email")}
+                type="text"
+                placeholder="Enter your Email"
+              />
             </Input>
             <Input>
               <p>Your Password</p>
-              <input type="text" placeholder="Enter your Password" />
+              <input
+                {...register("password")}
+                type="password"
+                placeholder="Enter your Password"
+              />
             </Input>
           </InputHold>
 
@@ -49,7 +99,9 @@ const SignIn = () => {
             <Sign2>Forget Password?</Sign2>
           </Signed>
 
-          <Btn>Sign in</Btn>
+          <Btn type="submit" onClick={Submit}>
+            Sign in
+          </Btn>
           <LastText>
             <P>Don't you have an account? </P>
             <Link style={{ textDecoration: "none" }} to={"/signup"}>
@@ -87,9 +139,14 @@ const P = styled.div`
   margin-top: 20px;
 `;
 
-const Btn = styled.div`
+const Btn = styled.button`
   background-color: #4a6cf7;
-  padding: 20px 170px;
+  /* padding: 10px 170px; */
+  width: 400px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 16px;
   font-weight: 600;
   text-transform: capitalize;
@@ -105,11 +162,12 @@ const Btn = styled.div`
   }
 
   @media screen and (max-width: 500px) {
-    padding: 10px 100px;
+    padding: none;
+    width: 290px;
   }
 `;
 const Keep = styled.div`
-  color: #b3b8c9;
+  color: #999ba1;
 `;
 const Icons = styled.div`
   color: lightgrey;
@@ -155,7 +213,8 @@ const Div1 = styled.div`
   }
 `;
 const Div2 = styled.div`
-  color: #ced1da;
+  color: #999ba1;
+
   font-weight: 600;
 
   @media screen and (max-width: 500px) {
@@ -181,7 +240,7 @@ const InputHold = styled.div`
     margin-top: 5px;
     outline: none;
     box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
-    font-weight: 550;
+    font-weight: 500;
 
     ::placeholder {
       color: #ced1da;
@@ -237,7 +296,7 @@ const Text1 = styled.div`
     margin-bottom: 10px;
   }
 `;
-const Card = styled.div`
+const Card = styled.form`
   width: 400px;
   height: fit-content;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
