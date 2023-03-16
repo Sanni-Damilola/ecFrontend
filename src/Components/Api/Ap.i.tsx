@@ -6,7 +6,7 @@ const localUrl = "http://localhost:41022/api";
 
 export const signup = async ({ name, email, password, userName }: any) => {
   return await axios
-    .post(`${localUrl}/api/signup`, {
+    .post(`${localUrl}/signup`, {
       name,
       email,
       password,
@@ -19,7 +19,7 @@ export const signup = async ({ name, email, password, userName }: any) => {
 
 export const signin = async ({ email, password }: any) => {
   return await axios
-    .post(`${localUrl}/api/singin`, {
+    .post(`${localUrl}/singin`, {
       email,
       password,
     })
