@@ -43,8 +43,8 @@ const SignUp = () => {
     mutationFn: signup,
 
     onSuccess: (myData) => {
-      dispatch(User(myData.data));
-      console.log(myData.data);
+      // dispatch(User(myData.data));
+      console.log("herer are the data",myData.data);
     },
   });
 
