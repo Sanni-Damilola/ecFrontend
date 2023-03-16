@@ -175,8 +175,8 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   @media screen and (min-width: 700px) {
-    width: calc(100vw - 280px);
-    margin-left: 250px;
+    width: calc(100vw - 220px);
+    margin-left: 220px;
     margin-top: 0px;
   }
 `;
