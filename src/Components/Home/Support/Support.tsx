@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import styled from "styled-components";
 
@@ -62,12 +64,11 @@ const Support = () => {
 export default Support;
 
 const Container = styled.div`
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 20px;
   margin-top: 50px;
   margin-bottom: 50px;
 `;
