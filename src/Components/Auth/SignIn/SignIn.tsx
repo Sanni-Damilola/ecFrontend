@@ -1,0 +1,269 @@
+/** @format */
+
+import React from "react";
+import styled from "styled-components";
+import pic from "../../images/logo.png";
+import { FcGoogle } from "react-icons/fc";
+import { RxBox } from "react-icons/rx";
+
+const SignIn = () => {
+  return (
+    <div>
+      <Container>
+        <Card>
+          <Text1>Sign in to your account</Text1>
+          <Text2>Login to your account for a faster checkout</Text2>
+          <InputG>
+            <Logo1>
+              <FcGoogle />
+            </Logo1>
+            <Text3>Sign in with Google</Text3>
+          </InputG>
+
+          {/* Div holds */}
+          <DivHold>
+            <Div1></Div1>
+            <Div2>Or, sign in with your email</Div2>
+            <Div1></Div1>
+          </DivHold>
+
+          <InputHold>
+            <Input>
+              <p>Your Email</p>
+              <input type="text" placeholder="Enter your Email" />
+            </Input>
+            <Input>
+              <p>Your Password</p>
+              <input type="text" placeholder="Enter your Password" />
+            </Input>
+          </InputHold>
+
+          <Signed>
+            <Sign1>
+              <Icons>
+                <RxBox />
+              </Icons>
+              <Keep>Keep me Signed in</Keep>
+            </Sign1>
+            <Sign2>Forget Password?</Sign2>
+          </Signed>
+
+          <Btn>Sign in</Btn>
+          <LastText>
+            <P>Don't you have an account? </P>
+            <Span>Sign Up</Span>
+          </LastText>
+        </Card>
+      </Container>
+    </div>
+  );
+};
+
+export default SignIn;
+
+const LastText = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 500px) {
+    font-size: 12px;
+  }
+`;
+
+const Span = styled.div`
+  margin-left: 7px;
+  color: #4a6cf7;
+  /* margin: 0; */
+  margin-top: 18px;
+`;
+
+const P = styled.div`
+  margin: 0;
+  margin-top: 20px;
+`;
+
+const Btn = styled.div`
+  background-color: #4a6cf7;
+  padding: 20px 170px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+  border: 0;
+  outline: none;
+  transition: all 360ms;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+
+  :hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 10px 100px;
+  }
+`;
+const Keep = styled.div`
+  color: #b3b8c9;
+`;
+const Icons = styled.div`
+  color: lightgrey;
+  margin-right: 10px;
+  margin-top: 3px;
+`;
+const Sign2 = styled.div`
+  color: #758ff9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const Sign1 = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+const Signed = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
+
+  @media screen and (max-width: 500px) {
+    font-size: 12px;
+  }
+`;
+const DivHold = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+const Div1 = styled.div`
+  height: 1px;
+  width: 80px;
+  background-color: black;
+
+  @media screen and (max-width: 500px) {
+    /* width: 60px; */
+  }
+`;
+const Div2 = styled.div`
+  color: #ced1da;
+  font-weight: 600;
+
+  @media screen and (max-width: 500px) {
+    font-weight: 400;
+    font-size: 14px;
+    margin-left: 20px;
+  }
+`;
+const InputHold = styled.div`
+  p {
+    margin: 0;
+  }
+
+  input {
+    width: 95%;
+    height: 50px;
+    background-color: #fff;
+    border: none;
+    padding-left: 20px;
+    /* margin-left: 10px; */
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    font-weight: 550;
+
+    ::placeholder {
+      color: #ced1da;
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: 500px) {
+      width: 90%;
+    }
+  }
+
+  p {
+    font-size: 14px;
+  }
+`;
+
+const Input = styled.div`
+  margin-top: 20px;
+`;
+const Logo1 = styled.div`
+  margin-top: 4px;
+  font-size: 22px;
+`;
+const InputG = styled.div`
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+`;
+
+const Text3 = styled.div`
+  font-size: 16px;
+  color: #9ea4b8;
+  font-weight: bold;
+  margin-left: 10px;
+`;
+const Text2 = styled.div`
+  font-size: 16px;
+  font-weight: 800;
+  color: #9ea4b8;
+  margin-bottom: 30px;
+`;
+const Text1 = styled.div`
+  font-size: 35px;
+  font-weight: bold;
+
+  @media screen and (max-width: 500px) {
+    line-height: 35px;
+    margin-bottom: 10px;
+  }
+`;
+const Card = styled.div`
+  width: 400px;
+  height: fit-content;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  /* padding-bottom: 20px; */
+  /* border: 1px solid red; */
+
+  padding: 30px;
+  background-color: #dde7eb;
+  /* background-color: red; */
+
+  @media screen and (max-width: 500px) {
+    width: 300px;
+    padding: 30px;
+  }
+`;
+const Container = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
