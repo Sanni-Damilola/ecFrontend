@@ -11,8 +11,12 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { IuserData } from "../../interface/UserInterface";
+import { signup } from "../../Api/Ap.i";
+import { User } from "../../Global/ReduxState/State";
+import { UseAppDispach } from "../../Global/ReduxState/Store";
 
 const SignUp = () => {
+  const dispatch = UseAppDispach();
   const schema = yup
     .object({
       name: yup.string().required(),
@@ -24,29 +28,33 @@ const SignUp = () => {
 
   type formData = yup.InferType<typeof schema>;
 
-const {
-  handleSubmit,
-  formState: { errors },
-  reset,
-  register,
-} = useForm<formData>({
-  resolver: yupResolver(schema),
-});  
+  const {
+    handleSubmit,
+    formState: { errors },
+    reset,
+    register,
+  } = useForm<formData>({
+    resolver: yupResolver(schema),
+  });
 
+  const posting = useMutation({
+    mutationKey: ["user"],
+    mutationFn: signup,
 
-const posting = useMutation({
-  mutationKey: ["user"],
-  // mutationFn: createUser,
+    onSuccess: (myData) => {
+      // dispatch(User(myData.data));
+      console.log(myData.data);
+    },
+  });
 
-  // onSuccess: (myData) => {
-  //   dispatch(User(myData.data));
-  // },
-});
+  const Submit = handleSubmit(async (data) => {
+    posting.mutate(data);
+  });
 
   return (
     <div>
       <Container>
-        <Card>
+        <Card onSubmit={Submit}>
           <Text1>Create your account</Text1>
           <Text2>its totally free and super easy</Text2>
 
@@ -66,16 +74,39 @@ const posting = useMutation({
 
           <InputHold>
             <Input>
+              <p> Name</p>
+              <input
+                required
+                {...register("name")}
+                type="name"
+                placeholder="Enter your full name"
+              />
+            </Input>
+            <Input>
               <p>Full Name</p>
-              <input type="name" placeholder="Enter your full name" />
+              <input
+                {...register("userName")}
+                type="name"
+                placeholder="full name"
+              />
             </Input>
             <Input>
               <p>Work Email</p>
-              <input type="email" placeholder="Enter your Email" />
+              <input
+                required
+                {...register("email")}
+                type="email"
+                placeholder="Enter your Email"
+              />
             </Input>
             <Input>
               <p>Your Password</p>
-              <input type="password" placeholder="Enter your Password" />
+              <input
+                required
+                {...register("password")}
+                type="password"
+                placeholder="Enter your Password"
+              />
             </Input>
           </InputHold>
 
@@ -89,7 +120,9 @@ const posting = useMutation({
             <Sign2>Forget Password?</Sign2>
           </Signed>
 
-          <Btn>Sign up</Btn>
+          <Btn type="submit" onClick={Submit}>
+            Sign up
+          </Btn>
           <LastText>
             <P>Already using Startup? </P>
             <Span>Sign in</Span>
@@ -124,9 +157,14 @@ const P = styled.div`
   margin-top: 20px;
 `;
 
-const Btn = styled.div`
+const Btn = styled.button`
   background-color: #4a6cf7;
-  padding: 20px 170px;
+  /* padding: 10px 170px; */
+  width: 400px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 16px;
   font-weight: 600;
   text-transform: capitalize;
