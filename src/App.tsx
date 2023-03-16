@@ -5,6 +5,7 @@ import { Link } from "react-scroll";
 import AllRoutes from "./Components/Routes/AllRoutes";
 import { HiArrowUp } from "react-icons/hi";
 import styled from "styled-components";
+import DashBoardRoutes from "./Components/Routes/DashBoardRoutes";
 
 function App() {
   const [scroll, setScroll] = React.useState(false);
@@ -22,6 +23,7 @@ function App() {
   return (
     <Container>
       <AllRoutes />
+      <DashBoardRoutes />
       {scroll ? (
         <Up offset={-100} duration={500} smooth={true} to="/home">
           <Icon>
