@@ -1,99 +1,36 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { GiEmptyHourglass } from "react-icons/gi";
-import { useNavigate } from "react-router-dom";
-import { MdAddCircle } from "react-icons/md";
-import { TiThSmall } from "react-icons/ti";
-import { TbBrandSocketIo } from "react-icons/tb";
-import { GrShareOption } from "react-icons/gr";
-import { MdPending } from "react-icons/md";
-import { BsCheck2Circle } from "react-icons/bs";
-import { FaCheckCircle } from "react-icons/fa";
+import { BsPersonCircle } from "react-icons/bs";
+import { RiLogoutCircleRFill } from "react-icons/ri";
 
 const DashSiderBar = () => {
-  const [add, setAdd] = useState<boolean>(false);
-  const [all, setAll] = useState<boolean>(false);
-  const [ps, setPs] = useState<boolean>(false);
-  const [bs, setBs] = useState<boolean>(false);
-  const [personal, setPersonal] = useState<boolean>(false);
-  const [collected, setCollected] = useState<boolean>(false);
-  const [pending, setPending] = useState<boolean>(false);
-  const navigate = useNavigate();
-
-  const toAll = () => {
-    setAll(true);
-    // navigate("/dashboard/next");
-  };
-  const toAdd = () => {
-    setAdd(true);
-  };
-  const toPs = () => {
-    setPs(true);
-  };
-  const toBs = () => {
-    setBs(true);
-  };
-  const toPersonal = () => {
-    setPersonal(true);
-  };
-
-  const toCollected = () => {
-    setCollected(true);
-  };
-  const toPending = () => {
-    setPending(true);
-  };
-
   return (
     <Container>
       <Wrapper>
-        <Company>
-          Company
-        </Company>
+        <Logo>
+          <div>CompANY</div>
+        </Logo>
+
         <Profile>
-          <Logo>@</Logo>
-          <Name>Miss Someone</Name>
-          <Name2>Miss Someone</Name2>
+          <div>
+            <Circle>
+              <BsPersonCircle />
+            </Circle>
+            <Name>John Doe</Name>
+            <Title>Attendant</Title>
+          </div>
         </Profile>
-        <Spaces>
-          <Main>
-            <div>Dashboard</div>
-          </Main>
-          <Branches
-            cl={add ? "black" : "gray"}
-            bd={add ? "3px solid black" : ""}
-            onClick={toAdd}>
-            <div>New Device</div>
-          </Branches>
-          <Branches2
-            cl={all ? "black" : "gray"}
-            bd={all ? "3px solid black" : ""}
-            onClick={toAll}>
-            <div>All</div>
-          </Branches2>
-          <Branches3
-            cl={ps ? "black" : "gray"}
-            bd={ps ? "3px solid black" : ""}
-            onClick={toPs}>
-            <div>P-Spaces</div>
-          </Branches3>
-          <Branches4
-            cl={bs ? "black" : "gray"}
-            bd={bs ? "3px solid black" : ""}
-            onClick={toBs}>
-            <div>B-Spacese</div>
-          </Branches4>
-          <Branches5
-            cl={personal ? "black" : "gray"}
-            bd={personal ? "3px solid black" : ""}
-            onClick={toPersonal}>
-            <div>
-              <TbBrandSocketIo />
-            </div>
-            <div>Personal</div>
-          </Branches5>
-        </Spaces>
-        <Logout>LOG OUT</Logout>
+
+        <Dashboard>
+          <MainDashboard>Dashboard</MainDashboard>
+          <DashHolds></DashHolds>
+        </Dashboard>
+        <Logout>
+          <div style={{ fontSize: "16px", color: "black" }}>
+            <RiLogoutCircleRFill />
+          </div>
+          <div style={{ marginLeft: "8px", marginBottom: "5px" }}>Log Out</div>
+        </Logout>
       </Wrapper>
     </Container>
   );
@@ -103,21 +40,13 @@ export default DashSiderBar;
 
 const Container = styled.div`
   height: 100vh;
-  width: 250px;
+  width: 220px;
   position: fixed;
   display: flex;
   align-items: center;
-`;
-const Logo = styled.div`
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 10px;
-  border: 1px solid silver;
-  border-radius: 50%;
 `;
+
 const Wrapper = styled.div`
   height: 90%;
   width: 100%;
@@ -125,133 +54,69 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
+const Logo = styled.div`
+  display: flex;
+  font-weight: bold;
+  padding-left: 50px;
+`;
 const Profile = styled.div`
-  width: 100%;
+  display: flex;
+  padding-left: 50px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+const Circle = styled.div`
+  width: 45px;
+  height: 45px;
+  padding: 3px;
+  border-radius: 50%;
+  background-color: #0066ff7a;
+  color: #0066fffb;
+  font-size: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 `;
-const Name = styled.div``;
-const Spaces = styled.div``;
-const Main = styled.div`
-  padding-left: 10px;
+const Name = styled.div`
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 5px;
+`;
+const Title = styled.div`
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 7px;
   font-weight: bold;
-  color: #acaaaa;
+  border-radius: 15px;
+  background-color: #d1d1048b;
+`;
+const Dashboard = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 35%;
+  justify-content: space-between;
+  font-size: 12px;
+`;
+const MainDashboard = styled.div`
+  font-weight: bold;
+  border-left: 3px solid black;
+  padding-left: 50px;
+  height: 30px;
   display: flex;
   align-items: center;
-  padding-left: 30px;
-  div {
-    margin-right: 7px;
-  }
 `;
-const Branches = styled.div<{ cl: string; bd: string }>`
-  padding-left: 40px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 13px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  border-left: ${(props) => props.bd};
-  color: ${(props) => props.cl};
-
-  div {
-    margin-right: 9px;
-    color: gray;
-  }
-`;
-const Branches2 = styled.div<{ cl: string; bd: string }>`
-  padding-left: 40px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 13px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  border-left: ${(props) => props.bd};
-  color: ${(props) => props.cl};
-  div {
-    margin-right: 9px;
-  }
-`;
-const Branches7 = styled.div<{ cl: string; bd: string }>`
-  padding-left: 40px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 13px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  color: ${(props) => props.cl};
-  border-left: ${(props) => props.bd};
-  div {
-    margin-right: 9px;
-    color: gray;
-  }
-`;
-const Branches6 = styled.div<{ cl: string; bd: string }>`
-  padding-left: 40px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 13px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  color: ${(props) => props.cl};
-  border-left: ${(props) => props.bd};
-  div {
-    margin-right: 9px;
-    color: gray;
-  }
-`;
-const Branches5 = styled.div<{ cl: string; bd: string }>`
-  padding-left: 40px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 13px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  color: ${(props) => props.cl};
-  border-left: ${(props) => props.bd};
-  div {
-    margin-right: 9px;
-    color: gray;
-  }
-`;
-const Branches4 = styled.div<{ cl: string; bd: string }>`
-  padding-left: 40px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 13px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  color: ${(props) => props.cl};
-  border-left: ${(props) => props.bd};
-  div {
-    margin-right: 9px;
-    color: gray;
-  }
-`;
-const Branches3 = styled.div<{ cl: string; bd: string }>`
-  padding-left: 40px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 13px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  color: ${(props) => props.cl};
-  border-left: ${(props) => props.bd};
-  div {
-    margin-right: 9px;
-    color: gray;
-  }
-`;
-const Company = styled.div``;
-const Name2 = styled.div``;
+const DashHolds = styled.div``;
 const Logout = styled.div`
-  padding-left: 40px;
+  display: flex;
+  padding-left: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  color: gray;
+  align-items: center;
 `;
