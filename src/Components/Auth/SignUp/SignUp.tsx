@@ -14,6 +14,7 @@ import { IuserData } from "../../interface/UserInterface";
 import { signup } from "../../Api/Ap.i";
 import { User } from "../../Global/ReduxState/State";
 import { UseAppDispach } from "../../Global/ReduxState/Store";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const dispatch = UseAppDispach();
@@ -42,7 +43,7 @@ const SignUp = () => {
     mutationFn: signup,
 
     onSuccess: (myData) => {
-      // dispatch(User(myData.data));
+      dispatch(User(myData.data));
       console.log(myData.data);
     },
   });
@@ -125,7 +126,9 @@ const SignUp = () => {
           </Btn>
           <LastText>
             <P>Already using Startup? </P>
-            <Span>Sign in</Span>
+            <Link style={{ textDecoration: "none" }} to={"/signin"}>
+              <Span>Sign in</Span>
+            </Link>
           </LastText>
         </Card>
       </Container>
@@ -149,6 +152,7 @@ const Span = styled.div`
   margin-left: 7px;
   color: #4a6cf7;
   /* margin: 0; */
+  cursor: pointer;
   margin-top: 18px;
 `;
 
@@ -321,6 +325,7 @@ const Card = styled.form`
   /* border: 1px solid red; */
 
   padding: 30px;
+  padding-top: 100px;
   background-color: #dde7eb;
   /* background-color: red; */
 

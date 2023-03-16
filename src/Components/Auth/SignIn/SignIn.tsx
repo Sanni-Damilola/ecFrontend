@@ -5,6 +5,7 @@ import styled from "styled-components";
 import pic from "../../images/logo.png";
 import { FcGoogle } from "react-icons/fc";
 import { RxBox } from "react-icons/rx";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   return (
@@ -51,7 +52,9 @@ const SignIn = () => {
           <Btn>Sign in</Btn>
           <LastText>
             <P>Don't you have an account? </P>
-            <Span>Sign Up</Span>
+            <Link style={{ textDecoration: "none" }} to={"/signup"}>
+              <Span>Sign Up</Span>
+            </Link>
           </LastText>
         </Card>
       </Container>

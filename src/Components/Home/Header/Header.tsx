@@ -47,8 +47,12 @@ const Header = () => {
           </HandBuggerMenu>
         )}
         <Authentication>
-          <SignIn>sign in</SignIn>
-          <SignUpButton padding="15px 30px" title=" sign up" />
+          <Link to={"/signin"}>
+            <SignIn>sign in</SignIn>
+          </Link>
+          <Link to={"/signup"}>
+            <SignUpButton padding="15px 30px" title=" sign up" />
+          </Link>
         </Authentication>
       </Wrapper>
       {show ? (
