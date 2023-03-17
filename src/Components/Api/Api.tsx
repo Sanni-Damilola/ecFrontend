@@ -28,19 +28,19 @@ export const signin = async ({ email, password }: any) => {
     });
 };
 export const postDevice = async ({
+  email,
   ticketNumber,
   ticketPosition,
   deviceDetails,
   deviceType,
-  numberOfDeviceBrought,
 }: any) => {
   return await axios
     .post(`${localUrl}/postdevice`, {
+      email,
       ticketNumber,
       ticketPosition,
       deviceDetails,
       deviceType,
-      numberOfDeviceBrought,
     })
     .then((res) => {
       return res.data;
@@ -48,5 +48,13 @@ export const postDevice = async ({
 };
 
 export const GetOneUser = async (id: any) => {
-  return await axios.get(`${localUrl}/getOneUser/${id}`).then((res) => res.data);
+  return await axios
+    .get(`${localUrl}/getOneUser/${id}`)
+    .then((res) => res.data);
 };
+
+export const getAllDevice = async () => {
+  return await axios.get(`${localUrl}/getallDevice`).then((res) => res.data);
+};
+
+
