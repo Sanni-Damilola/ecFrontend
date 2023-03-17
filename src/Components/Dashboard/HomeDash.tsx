@@ -6,7 +6,9 @@ const HomeDash = () => {
     <Container>
       <Left>
         Left
-        <Up>Up</Up>
+        <Up>
+          
+        </Up>
         <Down>Down</Down>
       </Left>
       <Right>Right</Right>
