@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { BsPersonCircle } from "react-icons/bs";
 import { RiLogoutCircleRFill } from "react-icons/ri";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAppSelector } from "../Global/ReduxState/Store";
 import { useQuery } from "@tanstack/react-query";
 import { GetOneUser } from "../Api/Api";
@@ -14,8 +14,7 @@ const DashSiderBar = () => {
   const [phone, setPhone] = useState(false);
   const [battery, setBattery] = useState(false);
   const [personal, setPersonal] = useState(false);
-  const [dash, setDash] = useState(false);
-  const nav = useNavigate();
+  const [dash, setDash] = useState(true);
 
   const gotoDash = () => {
     setPhone(false);
@@ -23,7 +22,6 @@ const DashSiderBar = () => {
     setPersonal(false);
     setAll(false);
     setDash(true);
-    nav("/dashboard");
   };
   const gotoAll = () => {
     setPhone(false);
@@ -31,8 +29,6 @@ const DashSiderBar = () => {
     setPersonal(false);
     setAll(true);
     setDash(false);
-
-    nav("/dashboard/all");
   };
   const gotoPhone = () => {
     setPhone(true);
@@ -40,8 +36,6 @@ const DashSiderBar = () => {
     setPersonal(false);
     setAll(false);
     setDash(false);
-
-    nav("/dashboard/phone");
   };
   const gotoBattery = () => {
     setBattery(true);
@@ -49,7 +43,6 @@ const DashSiderBar = () => {
     setDash(false);
     setAll(false);
     setPersonal(false);
-    nav("/dashboard/battery");
   };
   const gotoPersonal = () => {
     setPersonal(true);
@@ -57,7 +50,6 @@ const DashSiderBar = () => {
     setBattery(false);
     setDash(false);
     setAll(false);
-    nav("/dashboard/personal");
   };
 
   const user = useAppSelector((state) => state.currentUser);
@@ -76,7 +68,6 @@ const DashSiderBar = () => {
       <Wrapper>
         <Ups>
           <Logo>ECHARGING</Logo>
-
           <Profile>
             <div>
               <Circle>
@@ -88,39 +79,50 @@ const DashSiderBar = () => {
           </Profile>
 
           <Dashboard>
-            <MainDashboard
-              onClick={gotoDash}
-              cl={dash ? "black" : "gray"}
-              bdl={dash ? "3px solid black" : ""}>
-              Dashboard
-            </MainDashboard>
-            <DashHolds
-              onClick={gotoAll}
-              cl={all ? "black" : "gray"}
-              bdl={all ? "3px solid black" : ""}>
-              All
-            </DashHolds>
-            <DashHolds
-              onClick={gotoPhone}
-              cl={phone ? "black" : "gray"}
-              bdl={phone ? "3px solid black" : ""}>
-              Phone
-            </DashHolds>
-            <DashHolds
-              onClick={gotoBattery}
-              cl={battery ? "black" : "gray"}
-              bdl={battery ? "3px solid black" : ""}>
-              Batttery
-            </DashHolds>
-            <DashHolds
-              onClick={gotoPersonal}
-              cl={personal ? "black" : "gray"}
-              bdl={personal ? "3px solid black" : ""}>
-              Personal
-            </DashHolds>
+            <Link style={{ textDecoration: "none" }} to={"/"}>
+              <MainDashboard
+                onClick={gotoDash}
+                cl={dash ? "black" : "gray"}
+                bdl={dash ? "3px solid black" : ""}>
+                Dashboard
+              </MainDashboard>
+            </Link>
+
+            <Link style={{ textDecoration: "none" }} to={"/all"}>
+              <DashHolds
+                onClick={gotoAll}
+                cl={all ? "black" : "gray"}
+                bdl={all ? "3px solid black" : ""}>
+                All
+              </DashHolds>
+            </Link>
+            <Link style={{ textDecoration: "none" }} to={"/phone"}>
+              <DashHolds
+                onClick={gotoPhone}
+                cl={phone ? "black" : "gray"}
+                bdl={phone ? "3px solid black" : ""}>
+                Phone
+              </DashHolds>
+            </Link>
+            <Link style={{ textDecoration: "none" }} to={"/battery"}>
+              <DashHolds
+                onClick={gotoBattery}
+                cl={battery ? "black" : "gray"}
+                bdl={battery ? "3px solid black" : ""}>
+                Batttery
+              </DashHolds>
+            </Link>
+            <Link style={{ textDecoration: "none" }} to={"/personal"}>
+              <DashHolds
+                onClick={gotoPersonal}
+                cl={personal ? "black" : "gray"}
+                bdl={personal ? "3px solid black" : ""}>
+                Personal
+              </DashHolds>
+            </Link>
           </Dashboard>
         </Ups>
-        <Logout  >
+        <Logout>
           <div style={{ fontSize: "16px", color: "black" }}>
             <RiLogoutCircleRFill />
           </div>
@@ -134,7 +136,7 @@ const DashSiderBar = () => {
 export default DashSiderBar;
 
 const Container = styled.div`
-  height: 100vh;
+  height: 100%;
   width: 220px;
   position: fixed;
   display: flex;

@@ -2,75 +2,25 @@
 
 import React, { useState } from "react";
 import styled from "styled-components";
-import { UseAppDispach } from "../../Global/ReduxState/Store";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
 import { deviceData } from "../../Global/ReduxState/State";
-import { useMutation } from "@tanstack/react-query";
 import { postDevice, GetOneUser } from "../../Api/Api";
-import { useAppSelector } from "../../Global/ReduxState/Store";
-import { useQuery } from "@tanstack/react-query";
+
 
 const PostDash = () => {
-  const user = useAppSelector((state) => state.currentUser);
-
-  console.log("user", user);
-
-  const fetchUser = useQuery({
-    queryKey: ["user"],
-    queryFn: () => GetOneUser(user?._id),
-  });
-
-  console.log("here", fetchUser);
-
-  const dispatch = UseAppDispach();
-  const schema = yup
-    .object({
-      email: yup.string().required(),
-      ticketNumber: yup.string(),
-      ticketPosition: yup.string(),
-      deviceType: yup.string(),
-    })
-    .required();
-
-  type formData = yup.InferType<typeof schema>;
-
-  const {
-    handleSubmit,
-    formState: { errors },
-    reset,
-    register,
-  } = useForm<formData>({
-    resolver: yupResolver(schema),
-  });
-
-  const posting = useMutation({
-    mutationKey: ["device"],
-    mutationFn: postDevice,
-
-    onSuccess: (myData) => {
-      dispatch(deviceData(myData.data));
-      console.log("here", myData.data);
-    },
-  });
 
   return (
     <>
       <PostInput>
         <Wrapper>
           <Input
-            {...register("email")}
             placeholder="post device type"
             type="select"
           />
           <Input
-            {...register("ticketNumber")}
             placeholder="post a ticket number"
             type="select"
           />{" "}
           <Input
-            {...register("ticketPosition")}
             placeholder="post device positon"
             type="select"
           />
