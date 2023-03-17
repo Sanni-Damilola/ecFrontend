@@ -14,8 +14,6 @@ import { signup } from "../../Api/Api";
 import { IuserData } from "../../interface/UserInterface";
 import { User } from "../../Global/ReduxState/State";
 import { UseAppDispach } from "../../Global/ReduxState/Store";
-import { Link } from "react-router-dom";
-import logo1 from "../../images/newlogo.svg";
 import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
@@ -60,12 +58,6 @@ const SignUp = () => {
   return (
     <div>
       <Container>
-        <Logo>
-          <Icons2>
-            <img src={logo1} alt="" />
-          </Icons2>
-          <LogoText>E-Charging</LogoText>
-        </Logo>
         <Card onSubmit={Submit}>
           <Text1>Create your account</Text1>
 
@@ -147,29 +139,6 @@ const SignUp = () => {
 };
 
 export default SignUp;
-const Icons2 = styled.div`
-  width: 40px;
-  height: 40px;
-  background-color: yellow;
-  border-radius: 50px;
-
-  img {
-    width: 100%;
-    height: 100%;
-  }
-`;
-const LogoText = styled.div`
-  font-size: 30px;
-  font-weight: 900;
-  margin-left: 10px;
-`;
-
-const Logo = styled.div`
-  display: flex;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  justify-content: center;
-`;
 const LastText = styled.div`
   width: 100%;
   display: flex;
@@ -377,7 +346,6 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   /* margin-bottom: 30px; */
 
   @media screen and (max-width: 500px) {
