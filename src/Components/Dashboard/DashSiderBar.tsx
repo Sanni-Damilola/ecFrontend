@@ -125,6 +125,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #fffff9;
 `;
 
 const Wrapper = styled.div`
