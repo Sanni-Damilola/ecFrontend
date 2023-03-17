@@ -5,6 +5,7 @@ import AllDevices from "../Dashboard/AllDevices";
 import DashBoardHome from "../Dashboard/AllDevices";
 import Battery from "../Dashboard/Battery";
 import DashHeader from "../Dashboard/DashHeader";
+import HomeDash from "../Dashboard/HomeDash";
 import MobileHeader from "../Dashboard/MobileHeader";
 import Personal from "../Dashboard/Personal";
 import Phone from "../Dashboard/Phone";
@@ -17,6 +18,10 @@ const DashBoardRoutes = () => {
   let element = useRoutes([
     {
       path: "/dashboard",
+      element: <HomeDash />,
+    },
+    {
+      path: "/dashboard/all",
       element: <AllDevices />,
     },
     {
