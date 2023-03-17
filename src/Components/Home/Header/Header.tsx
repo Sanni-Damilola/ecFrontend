@@ -1,7 +1,7 @@
 /** @format */
 import React from "react";
 import styled from "styled-components";
-import logo from "../../images/logo-2.svg";
+
 import SignUpButton from "../../Global/Props/Button";
 import { FiMenu } from "react-icons/fi";
 import { Link } from "react-router-dom";
