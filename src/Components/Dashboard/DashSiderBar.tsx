@@ -1,9 +1,14 @@
+/** @format */
+
 import React, { useState } from "react";
 import styled from "styled-components";
 import { BsPersonCircle } from "react-icons/bs";
 import { RiLogoutCircleRFill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import { BsPlusCircleFill } from "react-icons/bs";
+import { useAppSelector } from "../Global/ReduxState/Store";
+import { useQuery } from "@tanstack/react-query";
+import { GetOneUser } from "../Api/Api";
 import PostDash from "./Props/PostDash";
 
 const DashSiderBar = () => {
@@ -57,29 +62,32 @@ const DashSiderBar = () => {
     nav("/dashboard/personal");
   };
 
-  const [post, setPost] = useState(false);
+  const user = useAppSelector((state) => state.currentUser);
 
-  const bringPostForm = () => {
-    setPost(true);
-  };
+  console.log("user", user);
+
+  const fetchUser = useQuery({
+    queryKey: ["user"],
+    queryFn: () => GetOneUser(user?._id),
+  });
+
+  console.log("here", fetchUser);
 
   return (
     <Container>
       <Wrapper>
         <Ups>
-          <Logo>
-            <div>CompANY</div>
-          </Logo>
+          <Logo>ECHARGING</Logo>
 
           <Profile>
             <div>
               <Circle>
                 <BsPersonCircle />
               </Circle>
-              <Name>John Doe</Name>
+              <Name>{user?.userName?.toUpperCase()}</Name>
               <Title>Attendant</Title>
 
-              <div style={{ fontSize: "19px" }} onClick={bringPostForm}>
+              <div style={{ fontSize: "19px" }}>
                 <BsPlusCircleFill />
               </div>
             </div>
@@ -170,10 +178,12 @@ const Ups = styled.div`
   flex-direction: column;
   gap: 40px;
 `;
-const Logo = styled.div`
+const Logo = styled.h2`
   display: flex;
-  font-weight: bold;
+  font-weight: 700;
+  margin: 0;
   padding-left: 50px;
+  color: #170708;
 `;
 const Profile = styled.div`
   display: flex;
@@ -186,8 +196,8 @@ const Profile = styled.div`
   }
 `;
 const Circle = styled.div`
-  width: 45px;
-  height: 45px;
+  width: 80px;
+  height: 80px;
   padding: 3px;
   border-radius: 50%;
   background-color: #0066ff7a;
@@ -198,9 +208,11 @@ const Circle = styled.div`
   align-items: center;
 `;
 const Name = styled.div`
-  font-size: 14px;
+  font-size: 19px;
   font-weight: 600;
+  text-transform: capitalize;
   margin-top: 5px;
+  color: #170708;
 `;
 const Title = styled.div`
   padding: 5px;
@@ -218,7 +230,7 @@ const Dashboard = styled.div`
   flex-direction: column;
   height: 35%;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: 17px;
 `;
 const MainDashboard = styled.div<{ cl: string; bdl: string }>`
   font-weight: bold;
@@ -237,13 +249,15 @@ const DashHolds = styled.div<{ cl: string; bdl: string }>`
   display: flex;
   align-items: center;
   font-weight: 600;
+  font-size: 17px;
   cursor: pointer;
 `;
 const Logout = styled.div`
   display: flex;
   padding-left: 50px;
-  font-size: 12px;
+  font-size: 20px;
   font-weight: 600;
   color: gray;
   align-items: center;
+  cursor: pointer;
 `;
