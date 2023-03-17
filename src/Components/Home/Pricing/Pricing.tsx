@@ -420,13 +420,14 @@ const Text2 = styled.div`
   }
 `;
 const Text1 = styled.div`
-  width: 200px;
+  width: 100%;
   font-size: 40px;
   font-weight: bolder;
   color: #000;
 
   @media screen and (max-width: 500px) {
     font-size: 30px;
+    width: 200px;
     line-height: 35px;
     margin-bottom: 10px;
   }
