@@ -1,4 +1,5 @@
 import React from "react";
+import { BsArrowUpRight } from "react-icons/bs";
 import styled from "styled-components";
 import Card2x from "./Props/Card2x";
 import { IoIosPeople } from "react-icons/io";
@@ -10,8 +11,21 @@ const HomeDash = () => {
   return (
     <Container>
       <Left>
-        Left
-        <Up>Up</Up>
+        <Up>
+          <h2>
+            just turn data <br /> into revenue!
+          </h2>
+          <span>
+            watch your progress and learn everything we <br /> know about you
+            and your information
+          </span>
+          <Discover>
+            Discover
+            <Icon>
+              <BsArrowUpRight />
+            </Icon>
+          </Discover>
+        </Up>
         <Down>
           <Wrapper2x>
             <div style={{ width: "80%" }}>
@@ -54,16 +68,58 @@ const HomeDash = () => {
           </Wrapper2x>
         </Down>
       </Left>
-      <Right>Right</Right>
+      <Right>
+        <RightUp></RightUp>
+      </Right>
     </Container>
   );
 };
 
 export default HomeDash;
+
+const RightUp = styled.div``;
+
+const Discover = styled.button`
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  cursor: pointer;
+  margin-top: 20px;
+`;
+const Icon = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3px;
+  margin-left: 20px;
+`;
+
 const Left = styled.div`
   width: 50%;
+  padding-left: 60px;
+  margin-top: 50px;
 `;
-const Up = styled.div``;
+const Up = styled.div`
+  width: 100%;
+
+  h2 {
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin: 5px;
+  }
+
+  span {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(0, 0, 0, 0.5);
+  }
+`;
 const Down = styled.div``;
 const Right = styled.div``;
 const Wrapper2x = styled.div`
@@ -87,7 +143,11 @@ const Cards = styled.div`
 const Rest = styled.div``;
 
 const Container = styled.div`
-  background-color: #fafaff;
+
+  background-color: #f1f1fd;
+  width: 100%;
+  height: fit-content;
+  padding-bottom: 30px;
   display: flex;
   @media screen and (min-width: 700px) {
     width: calc(100vw - 220px);
