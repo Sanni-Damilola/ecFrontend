@@ -9,25 +9,40 @@ const DashSiderBar = () => {
   const [phone, setPhone] = useState(false);
   const [battery, setBattery] = useState(false);
   const [personal, setPersonal] = useState(false);
+  const [dash, setDash] = useState(false);
   const nav = useNavigate();
 
+  const gotoDash = () => {
+    setPhone(false);
+    setBattery(false);
+    setPersonal(false);
+    setAll(false);
+    setDash(true);
+    nav("/dashboard");
+  };
   const gotoAll = () => {
     setPhone(false);
     setBattery(false);
     setPersonal(false);
     setAll(true);
-    nav("/dashboard");
+    setDash(false);
+
+    nav("/dashboard/all");
   };
   const gotoPhone = () => {
     setPhone(true);
     setBattery(false);
     setPersonal(false);
     setAll(false);
+    setDash(false);
+
     nav("/dashboard/phone");
   };
   const gotoBattery = () => {
     setBattery(true);
     setPhone(false);
+    setDash(false);
+    setAll(false);
     setPersonal(false);
     nav("/dashboard/battery");
   };
@@ -35,6 +50,8 @@ const DashSiderBar = () => {
     setPersonal(true);
     setPhone(false);
     setBattery(false);
+    setDash(false);
+    setAll(false);
     nav("/dashboard/personal");
   };
   return (
@@ -56,7 +73,12 @@ const DashSiderBar = () => {
           </Profile>
 
           <Dashboard>
-            <MainDashboard>Dashboard</MainDashboard>
+            <MainDashboard
+              onClick={gotoDash}
+              cl={dash ? "black" : "gray"}
+              bdl={dash ? "3px solid black" : ""}>
+              Dashboard
+            </MainDashboard>
             <DashHolds
               onClick={gotoAll}
               cl={all ? "black" : "gray"}
@@ -168,12 +190,14 @@ const Dashboard = styled.div`
   justify-content: space-between;
   font-size: 12px;
 `;
-const MainDashboard = styled.div`
+const MainDashboard = styled.div<{ cl: string; bdl: string }>`
   font-weight: bold;
-  border-left: 3px solid black;
+  color: ${(props) => props.cl};
+  border-left: ${(props) => props.bdl};
   padding-left: 50px;
   height: 30px;
   display: flex;
+  cursor: pointer;
   align-items: center;
 `;
 const DashHolds = styled.div<{ cl: string; bdl: string }>`
