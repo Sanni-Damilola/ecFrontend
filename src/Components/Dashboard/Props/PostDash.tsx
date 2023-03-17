@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-interface iProps {
-  show: boolean;
-}
-
-const PostDash: React.FC<iProps> = ({ show }) => {
-  const [idle, setIdle] = useState(false);
-
+const PostDash = () => {
   return (
     <>
       <PostInput>

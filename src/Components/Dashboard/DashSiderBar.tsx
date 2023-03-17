@@ -125,13 +125,12 @@ const DashSiderBar = () => {
           <div style={{ marginLeft: "8px", marginBottom: "5px" }}>Log Out</div>
         </Logout>
       </Wrapper>
-      {post ? (
-        <Absolute>
-          <div>
-            <PostDash show={post} />
-          </div>
-        </Absolute>
-      ) : null}
+
+      <Absolute>
+        <div>
+          <PostDash />
+        </div>
+      </Absolute>
     </Container>
   );
 };
