@@ -14,6 +14,7 @@ import { IuserData } from "../../interface/UserInterface";
 import { User } from "../../Global/ReduxState/State";
 import { UseAppDispach } from "../../Global/ReduxState/Store";
 import { signin } from "../../Api/Api";
+import logo1 from "../../images/newlogo.svg";
 
 const SignIn = () => {
   const dispatch = UseAppDispach();
@@ -41,7 +42,9 @@ const SignIn = () => {
 
     onSuccess: (myData) => {
       dispatch(User(myData.data));
-      // console.log("here", myData.data);
+
+      console.log("here", myData.data);
+      // console.log("here", myData.data)
     },
   });
 
@@ -56,6 +59,12 @@ const SignIn = () => {
   return (
     <div>
       <Container>
+        <Logo>
+          <Icons2>
+            <img src={logo1} alt="" />
+          </Icons2>
+          <LogoText>E-Charging</LogoText>
+        </Logo>
         <Card onSubmit={Submit}>
           <Text1>Sign in to your account</Text1>
           {/* <Text2>Login to your account for a faster checkout</Text2> */}
@@ -118,6 +127,29 @@ const SignIn = () => {
 };
 
 export default SignIn;
+
+const Icons2 = styled.div`
+  width: 40px;
+  height: 40px;
+  background-color: yellow;
+  border-radius: 50px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`;
+const LogoText = styled.div`
+  font-size: 30px;
+  font-weight: 900;
+  margin-left: 10px;
+`;
+
+const Logo = styled.div`
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+`;
 
 const LastText = styled.div`
   width: 100%;
@@ -321,6 +353,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   /* margin-top: 30px; */
 
   @media screen and (max-width: 500px) {

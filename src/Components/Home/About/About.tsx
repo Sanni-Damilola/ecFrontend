@@ -10,8 +10,7 @@ const About = () => {
     <Container id="/home">
       <Wrapper>
         <Div>
-   
-          ECharging <br /> Built For Charging Business
+          E-Charging <br /> Built For Charging Gadgets
         </Div>
         <span>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. <br /> Cumque

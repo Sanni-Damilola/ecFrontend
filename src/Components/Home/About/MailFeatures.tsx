@@ -24,32 +24,32 @@ const MailFeatures = () => {
         <BoxWrapper>
           <Box
             image={img1}
-            text="Crafted for Startups"
+            text="Deliver Electrical Energy"
             paragraph="Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores."
           />
           <Box
             image={img2}
-            text="High-quality Design"
+            text="Maintain battries State"
             paragraph="Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores."
           />
           <Box
             image={img3}
-            text="All Essential Components"
+            text="Very Convenient"
             paragraph="Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores."
           />
           <Box
             image={img4}
-            text="Speed Optimized"
+            text="Environment Friendly"
             paragraph="Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores."
           />
           <Box
             image={img5}
-            text="Fully Customizable"
+            text="Save Time"
             paragraph="Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores."
           />
           <Box
             image={img6}
-            text="Regular Updates"
+            text="Less Cost"
             paragraph="Tuae nam ex similique incidunt expedita exerci tationem laudantium. Repellendus quisquam numquam perferendis earum sapiente non tempore? Fugit repellat ut maiores."
           />
         </BoxWrapper>

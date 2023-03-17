@@ -3,11 +3,16 @@ import styled from "styled-components";
 import { BsCheck } from "react-icons/bs";
 const Pricing = () => {
   const [show, setShow] = useState(false);
+  const [Num, setNum] = useState(false);
 
   const toggle = () => {
     setShow(!show);
   };
 
+  //this is the for the month and year
+  const Changing = () => {
+    setNum(!show);
+  };
   return (
     <div>
       <Container>
@@ -27,7 +32,7 @@ const Pricing = () => {
                       toggle();
                     }}
                     wd=""
-                    bg="red"
+                    bg="darkblue"
                   ></Empty1>
                   <Empty2 bg1="darkblue"></Empty2>
                 </Div2>
@@ -40,7 +45,7 @@ const Pricing = () => {
                     wd="0"
                     bg="#fff"
                   ></Empty1>
-                  <Empty2 bg1="green"></Empty2>
+                  <Empty2 bg1="lightblue"></Empty2>
                 </Div2>
               )}
               <Div3>Yearly</Div3>
@@ -52,17 +57,24 @@ const Pricing = () => {
               {/* This is the first card */}
               <Card>
                 <Dollarholder>
-                  <Dollar>
-                    {" "}
-                    $589<span>/mon</span>
-                  </Dollar>
+                  {show ? (
+                    <Dollar>
+                      {" "}
+                      #38.9<span>/mon</span>
+                    </Dollar>
+                  ) : (
+                    <Dollar>
+                      {" "}
+                      #589<span>/yr</span>
+                    </Dollar>
+                  )}
                   <Plus>Plus</Plus>
                 </Dollarholder>
                 <Text3>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Quasi, adipisci.
                 </Text3>
-                <Btn>Start Free Trail</Btn>
+                <Btn>Grab Offer Now </Btn>
                 <Line></Line>
 
                 <AllHolder>
@@ -70,31 +82,31 @@ const Pricing = () => {
                     <Icons>
                       <BsCheck />
                     </Icons>
-                    <IconsText>All UI Components</IconsText>
+                    <IconsText>Deliver Electrical Energy</IconsText>
                   </Holder1>
                   <Holder1>
                     <Icons>
                       <BsCheck />
                     </Icons>
-                    <IconsText>Use with Unlimited Projects</IconsText>
+                    <IconsText>Battery state 100%</IconsText>
                   </Holder1>
                   <Holder1>
                     <Icons>
                       <BsCheck />
                     </Icons>
-                    <IconsText>Commercial Use</IconsText>
+                    <IconsText>Discounts for First timers</IconsText>
                   </Holder1>
                   <Holder1>
                     <Icons>
                       <BsCheck />
                     </Icons>
-                    <IconsText>Email Support</IconsText>
+                    <IconsText>Saves Times</IconsText>
                   </Holder1>
                   <Holder1>
                     <Icons>
                       <BsCheck />
                     </Icons>
-                    <IconsText>Lifetime Access</IconsText>
+                    <IconsText>Referal Bonus</IconsText>
                   </Holder1>
                   <Holder1>
                     <Icons>
@@ -107,10 +119,17 @@ const Pricing = () => {
               {/* Second card  begins here */}
               <Card>
                 <Dollarholder>
-                  <Dollar>
-                    {" "}
-                    $589<span>/mon</span>
-                  </Dollar>
+                  {show ? (
+                    <Dollar>
+                      {" "}
+                      #38.9<span>/mon</span>
+                    </Dollar>
+                  ) : (
+                    <Dollar>
+                      {" "}
+                      #589<span>/yr</span>
+                    </Dollar>
+                  )}
                   <Plus>Plus</Plus>
                 </Dollarholder>
                 <Text3>
@@ -125,31 +144,31 @@ const Pricing = () => {
                     <Icons>
                       <BsCheck />
                     </Icons>
-                    <IconsText>All UI Components</IconsText>
+                    <IconsText>Deliver Electrical Energy</IconsText>
                   </Holder1>
                   <Holder1>
                     <Icons>
                       <BsCheck />
                     </Icons>
-                    <IconsText>Use with Unlimited Projects</IconsText>
+                    <IconsText>Battery state 100%</IconsText>
                   </Holder1>
                   <Holder1>
                     <Icons>
                       <BsCheck />
                     </Icons>
-                    <IconsText>Commercial Use</IconsText>
+                    <IconsText>Discounts for First timers</IconsText>
                   </Holder1>
                   <Holder1>
                     <Icons>
                       <BsCheck />
                     </Icons>
-                    <IconsText>Email Support</IconsText>
+                    <IconsText>Saves Times</IconsText>
                   </Holder1>
                   <Holder1>
                     <Icons>
                       <BsCheck />
                     </Icons>
-                    <IconsText>Lifetime Access</IconsText>
+                    <IconsText>Referal Bonus</IconsText>
                   </Holder1>
                   <Holder1>
                     <Icons>
@@ -162,10 +181,17 @@ const Pricing = () => {
               {/* Third card begins here too */}
               <Card>
                 <Dollarholder>
-                  <Dollar>
-                    {" "}
-                    $589<span>/mon</span>
-                  </Dollar>
+                  {show ? (
+                    <Dollar>
+                      {" "}
+                      #38.9<span>/mon</span>
+                    </Dollar>
+                  ) : (
+                    <Dollar>
+                      {" "}
+                      #589<span>/yr</span>
+                    </Dollar>
+                  )}
                   <Plus>Plus</Plus>
                 </Dollarholder>
                 <Text3>
@@ -180,32 +206,31 @@ const Pricing = () => {
                     <Icons>
                       <BsCheck />
                     </Icons>
-                    <IconsText>All UI Components</IconsText>
-                  </Holder1>
-
-                  <Holder1>
-                    <Icons>
-                      <BsCheck />
-                    </Icons>
-                    <IconsText>Use with Unlimited Projects</IconsText>
+                    <IconsText>Deliver Electrical Energy</IconsText>
                   </Holder1>
                   <Holder1>
                     <Icons>
                       <BsCheck />
                     </Icons>
-                    <IconsText>Commercial Use</IconsText>
+                    <IconsText>Battery state 100%</IconsText>
                   </Holder1>
                   <Holder1>
                     <Icons>
                       <BsCheck />
                     </Icons>
-                    <IconsText>Email Support</IconsText>
+                    <IconsText>Discounts for First timers</IconsText>
                   </Holder1>
                   <Holder1>
                     <Icons>
                       <BsCheck />
                     </Icons>
-                    <IconsText>Lifetime Access</IconsText>
+                    <IconsText>Saves Times</IconsText>
+                  </Holder1>
+                  <Holder1>
+                    <Icons>
+                      <BsCheck />
+                    </Icons>
+                    <IconsText>Referal Bonus</IconsText>
                   </Holder1>
                   <Holder1>
                     <Icons>
@@ -391,7 +416,7 @@ const CardHolder = styled.div`
     align-items: center;
     justify-content: center;
 
-    background-color: green;
+    /* background-color: green; */
   }
   @media screen and (max-width: 780px) {
     display: block;
@@ -402,18 +427,19 @@ const CardHolder = styled.div`
   }
 `;
 const Text2 = styled.div`
-  width: 200px;
+  width: 100%;
   font-size: 18px;
   color: #b7b6b6;
   font-weight: 600;
-  /* margin-bottom: 20px; */
 
   @media screen and (max-width: 760px) {
     font-size: 14px;
+    width: 450px;
   }
 
   @media screen and (max-width: 500px) {
     font-size: 16px;
+    width: 350px;
   }
   @media screen and (max-width: 330px) {
     font-size: 14px;
@@ -475,6 +501,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  margin-top: 40px;
   @media screen and (max-width: 500px) {
     width: 100%;
     display: flex;

@@ -51,7 +51,7 @@ const Container = styled.div`
   width: fit-content;
   height: fit-content;
   margin-top: 100px;
-  padding-bottom: 100px;
+  /* padding-bottom: 100px; */
   @media screen and (max-width: 500px) {
     padding-bottom: 0px;
   }

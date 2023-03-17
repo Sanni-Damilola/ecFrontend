@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import pics from "../../images/happy1.jpg";
+import pics1 from "../../images/happ2.jpg";
+import pics2 from "../../images/happy3.jpg";
 
 const Lastest = () => {
   return (
     <Container>
       <Wrapper>
         <Upper>
-          <Text>Our Gadgets</Text>
+          <Text>Our Satisfied Client</Text>
           <P>
             This are the differents gadgets that we have can accomdate on your
             platform
@@ -19,7 +21,7 @@ const Lastest = () => {
               <Pic>
                 <img src={pics} alt="" />
               </Pic>
-              <ImgText>Best Service</ImgText>
+              <ImgText>Maria Clarie</ImgText>
               <ImgText2>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
                 quidem nesciunt esse voluptates placeat id autem quod molestias
@@ -28,9 +30,9 @@ const Lastest = () => {
             </Card>
             <Card>
               <Pic>
-                <img src={pics} alt="" />
+                <img src={pics1} alt="" />
               </Pic>
-              <ImgText>Best Service Afforable</ImgText>
+              <ImgText>Seraphina Victor</ImgText>
               <ImgText2>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
                 quidem nesciunt esse voluptates placeat id autem quod molestias
@@ -39,9 +41,9 @@ const Lastest = () => {
             </Card>
             <Card>
               <Pic>
-                <img src={pics} alt="" />
+                <img src={pics2} alt="" />
               </Pic>
-              <ImgText>Best Service</ImgText>
+              <ImgText>Johnny Newton</ImgText>
               <ImgText2>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
                 quidem nesciunt esse voluptates placeat id autem quod molestias
@@ -108,18 +110,21 @@ const CardHolder = styled.div`
 const Text = styled.div`
   margin: 0;
   margin-top: 20px;
-  width: 200px;
+  /* width: 200px; */
   font-size: 40px;
   font-weight: bolder;
   /* background-color: red; */
 
   @media screen and (max-width: 500px) {
     font-size: 30px;
+    width: 200px;
   }
 `;
 const P = styled.div`
   margin: 0;
-  width: 200px;
+  /* width: 300px; */
+  text-align: center;
+  /* background-color: red; */
   font-weight: 600;
   color: rgb(0, 0, 0, 0.6);
 
@@ -138,7 +143,8 @@ const Upper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* text-align: center; */
+  /* background-color: blue; */
+  text-align: center;
   margin-bottom: 20px;
 `;
 const Wrapper = styled.div`
