@@ -17,6 +17,7 @@ import { HiLockClosed } from "react-icons/hi";
 import { MdLaptopMac } from "react-icons/md";
 import { IoIosPeople } from "react-icons/io";
 import pic from "../images/sso.jpg";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 const AllDevices = () => {
   const fetchAlDevice = useQuery({
@@ -142,6 +143,65 @@ const AllDevices = () => {
             </p>
           </Box2>
         </RightUp>
+        <RightDown>
+          <Wrap>
+            <Data>
+              <Position>
+                <Radio checked type={"radio"} />
+                <Titles>p40</Titles>
+                <Titles>| |</Titles>
+                <Titles>p40</Titles>
+              </Position>
+              <DateAndTime>Today At 20 : 30</DateAndTime>
+            </Data>
+            <Button>
+              <DeleteWrap>
+                delete{" "}
+                <DeleteIcon>
+                  <RiDeleteBin6Line />
+                </DeleteIcon>
+              </DeleteWrap>
+            </Button>
+          </Wrap>
+          <Wrap>
+            <Data>
+              <Position>
+                <Radio checked type={"radio"} />
+                <Titles>p40</Titles>
+                <Titles>| |</Titles>
+                <Titles>p40</Titles>
+              </Position>
+              <DateAndTime>Today At 20 : 30</DateAndTime>
+            </Data>
+            <Button>
+              <DeleteWrap>
+                delete{" "}
+                <DeleteIcon>
+                  <RiDeleteBin6Line />
+                </DeleteIcon>
+              </DeleteWrap>
+            </Button>
+          </Wrap>
+          <Wrap>
+            <Data>
+              <Position>
+                <Radio checked type={"radio"} />
+                <Titles>p40</Titles>
+                <Titles>| |</Titles>
+                <Titles>p40</Titles>
+              </Position>
+              <DateAndTime>Today At 20 : 30</DateAndTime>
+            </Data>
+            <Button>
+              <DeleteWrap>
+                delete{" "}
+                <DeleteIcon>
+                  <RiDeleteBin6Line />
+                </DeleteIcon>
+              </DeleteWrap>
+            </Button>
+          </Wrap>
+        </RightDown>
       </Right>
     </Container>
   );
@@ -192,10 +252,30 @@ const OverFlow = styled.div`
   @media screen and (max-width: 500px) {
     height: 250px;
   }
+const Wrap = styled.div`
+  width: 250px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: 5px;
+  background-color: #ffc0cb;
+`;
+
+const DeleteIcon = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3px;
+  margin-left: 10px;
 `;
 
 const Button = styled.button`
   margin-top: 10px;
+
+  width: 100%;
   cursor: pointer;
   height: 55px;
   border-radius: 0px 0px 12px 12px;
@@ -210,10 +290,14 @@ const DeleteWrap = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 18px;
+  height: 80px;
+  width: 100%;
+
   font-weight: 500;
   color: red;
   text-transform: capitalize;
 `;
+
 const DeleteIcon = styled.div`
   display: flex;
   justify-content: center;
@@ -222,9 +306,11 @@ const DeleteIcon = styled.div`
   margin-left: 10px;
 `;
 
+
 const Position = styled.div`
   display: flex;
   margin-bottom: 10px;
+
 `;
 
 const DeviceName = styled.div`
@@ -235,6 +321,52 @@ const DeviceName = styled.div`
   text-transform: capitalize;
 `;
 const Device = styled.div`
+
+  width: 100%;
+`;
+
+const Radio = styled.input`
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+  border-radius: 8px;
+  /* border: 3px solid #ac6dde; */
+  border: 3px solid #eb72bb;
+  margin-right: 5px;
+`;
+
+const Titles = styled.div`
+  color: white;
+  margin-right: 20px;
+  margin-left: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+`;
+
+const DateAndTime = styled.div`
+  margin-left: 40px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgb(0, 0, 0, 0.5);
+`;
+
+const Data = styled.div``;
+
+const RightDown = styled.div`
+  width: 100%;
+  height: 600px;
+  /* background-color: red; */
+  padding-bottom: 30px;
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+`;
+
 
 const Box = styled.div`
   width: 200px;
@@ -317,7 +449,6 @@ const TextGet = styled.div`
   margin-left: 10px;
   text-transform: capitalize;
   font-size: 18px;
-=======
   justify-content: center;
   align-items: center;
 
@@ -432,6 +563,7 @@ const Right = styled.div`
   height: 100%;
   padding-right: 50px;
   padding-top: 40px;
+  flex-direction: column;
   background-color: #eeeeee;
 `;
 const Heading = styled.div`
