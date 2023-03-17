@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const Personal = () => {
-  return <Container>Personal</Container>;
+const Phone = () => {
+  return <Container>Phone</Container>;
 };
 
-export default Personal;
+export default Phone;
 
 const Container = styled.div`
   margin-top: 70px;

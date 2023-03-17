@@ -1,10 +1,13 @@
 import React from "react";
 import { useNavigate, useRoutes } from "react-router-dom";
 import styled from "styled-components";
-import DashBoardHome from "../Dashboard/DashBoardHome";
+import AllDevices from "../Dashboard/AllDevices";
+import DashBoardHome from "../Dashboard/AllDevices";
+import Battery from "../Dashboard/Battery";
 import DashHeader from "../Dashboard/DashHeader";
 import MobileHeader from "../Dashboard/MobileHeader";
-import PSpaces from "../Dashboard/PSpaces";
+import Personal from "../Dashboard/Personal";
+import Phone from "../Dashboard/Phone";
 
 // import DashHeader from "../Dashboard.tsx/DashHeader";
 
@@ -14,11 +17,19 @@ const DashBoardRoutes = () => {
   let element = useRoutes([
     {
       path: "/dashboard",
-      element: <DashBoardHome />,
+      element: <AllDevices />,
     },
     {
-      path: "/dashboard/pspaces",
-      element: <PSpaces />,
+      path: "/dashboard/phone",
+      element: <Phone />,
+    },
+    {
+      path: "/dashboard/battery",
+      element: <Battery />,
+    },
+    {
+      path: "/dashboard/personal",
+      element: <Personal />,
     },
     // {
     //   path: "*",
