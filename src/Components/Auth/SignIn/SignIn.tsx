@@ -41,7 +41,7 @@ const SignIn = () => {
 
     onSuccess: (myData) => {
       dispatch(User(myData.data));
-      // console.log(myData.data);
+      console.log("here",myData.data);
     },
   });
 

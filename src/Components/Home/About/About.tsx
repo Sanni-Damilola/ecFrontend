@@ -10,13 +10,19 @@ const About = () => {
     <Container id="/home">
       <Wrapper>
         <Div>
-          Emergency call? <br /> PHone Battery Flat? <br /> That's No more!!
+   
+          ECharging <br /> Built For Charging Business
         </Div>
         <span>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. <br /> Cumque
+          itaque error ipsum illum! Fugit, maxime, <br /> ut distinctio officiis
+          natus dolorem possimus eius consectetur!
+        </span>
+        {/* <span>
           A Complete Tailwind CSS Web Template Crafted for - <br /> Startup,
           SaaS, Business, Software and Agencies. Comes <br /> with high-quality
           design and everything you need!
-        </span>
+        </span> */}
         <ButtonWrapper>
           <Link style={{ textDecoration: "none" }} to={"/signup"}>
             <Button padding="18px 30px" title="Get Started" />
