@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import styled from "styled-components";
 import Card2x from "./Props/Card2x";
@@ -6,6 +6,7 @@ import { IoIosPeople } from "react-icons/io";
 import { MdLaptopMac } from "react-icons/md";
 import { GiElectric } from "react-icons/gi";
 import { HiLockClosed } from "react-icons/hi";
+
 import pic from "../images/sso.jpg";
 
 const HomeDash = () => {
@@ -20,12 +21,14 @@ const HomeDash = () => {
             watch your progress and learn everything we <br /> know about you
             and your information
           </span>
-          <Discover>
-            Discover
-            <Icon>
-              <BsArrowUpRight />
-            </Icon>
-          </Discover>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <Discover>
+              Discover
+              <Icon>
+                <BsArrowUpRight />
+              </Icon>
+            </Discover>
+          </div>
         </Up>
         <Down>
           <Wrapper2x>
@@ -121,7 +124,7 @@ const Box = styled.div`
   width: 200px;
   height: 250px;
   border-radius: 10px;
-  background-color: green;
+  background-color: #07b307;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -212,6 +215,7 @@ const Icon = styled.div`
 const Left = styled.div`
   width: 50%;
   padding-left: 60px;
+  padding-top: 60px;
 `;
 const Up = styled.div`
   width: 100%;
@@ -233,7 +237,12 @@ const Up = styled.div`
 const Down = styled.div`
   margin-top: 40px;
 `;
-const Right = styled.div``;
+const Right = styled.div`
+  height: 100%;
+  padding-right: 50px;
+  padding-top: 40px;
+  background-color: #eeeeee;
+`;
 const Heading = styled.div`
   width: 100%;
   display: flex;
@@ -304,7 +313,7 @@ const Rest = styled.div`
 const Container = styled.div`
   background-color: #f1f1fd;
   width: 100%;
-  padding-top: 100px;
+
   height: fit-content;
   padding-bottom: 30px;
   display: flex;
@@ -312,5 +321,6 @@ const Container = styled.div`
     width: calc(100vw - 220px);
     margin-left: 220px;
     margin-top: 0px;
+    height: 100vh;
   }
 `;
