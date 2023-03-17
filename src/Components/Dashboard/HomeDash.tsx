@@ -1,6 +1,11 @@
 import React from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import styled from "styled-components";
+import Card2x from "./Props/Card2x";
+import { IoIosPeople } from "react-icons/io";
+import { MdLaptopMac } from "react-icons/md";
+import { GiElectric } from "react-icons/gi";
+import { HiLockClosed } from "react-icons/hi";
 
 const HomeDash = () => {
   return (
@@ -28,7 +33,36 @@ const HomeDash = () => {
                 <div>Data classification</div>
                 <div>. . .</div>
               </Title>
-              <Cards></Cards>
+              <Cards>
+                <Card2x
+                  iconx={<IoIosPeople />}
+                  text="Public"
+                  color="pink"
+                  wide="90px"
+                  high="38px"
+                />
+                <Card2x
+                  iconx={<MdLaptopMac />}
+                  text="Public"
+                  color="#00b9a1"
+                  wide="90px"
+                  high="38px"
+                />{" "}
+                <Card2x
+                  iconx={<HiLockClosed />}
+                  text="Public"
+                  color="#a3c002"
+                  wide="90px"
+                  high="38px"
+                />{" "}
+                <Card2x
+                  iconx={<GiElectric />}
+                  text="Public"
+                  color="#c96d04"
+                  wide="90px"
+                  high="38px"
+                />
+              </Cards>
               <Rest></Rest>
             </div>
           </Wrapper2x>
@@ -100,10 +134,16 @@ const Title = styled.div`
   font-weight: bold;
   font-size: 14px;
 `;
-const Cards = styled.div``;
+const Cards = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+`;
 const Rest = styled.div``;
 
 const Container = styled.div`
+
   background-color: #f1f1fd;
   width: 100%;
   height: fit-content;
