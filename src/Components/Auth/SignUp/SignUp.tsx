@@ -2,7 +2,7 @@
 
 import React from "react";
 import styled from "styled-components";
-import pic from "../../images/logo.png";
+import pic from "../../images/happ2.jpg";
 import { FcGoogle } from "react-icons/fc";
 import { RxBox } from "react-icons/rx";
 import * as yup from "yup";
@@ -58,14 +58,13 @@ const SignUp = () => {
       <Container>
         <Card onSubmit={Submit}>
           <Text1>Create your account</Text1>
-          <Text2>its totally free and super easy</Text2>
 
-          <InputG>
+          {/* <InputG>
             <Logo1>
               <FcGoogle />
             </Logo1>
             <Text3>Sign up with</Text3>
-          </InputG>
+          </InputG> */}
 
           {/* Div holds */}
           <DivHold>
@@ -166,7 +165,7 @@ const Btn = styled.button`
   background-color: #4a6cf7;
   /* padding: 10px 170px; */
   width: 400px;
-  height: 60px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -253,7 +252,7 @@ const InputHold = styled.div`
 
   input {
     width: 95%;
-    height: 50px;
+    height: 40px;
     background-color: #fff;
     border: none;
     padding-left: 20px;
@@ -281,7 +280,7 @@ const InputHold = styled.div`
 `;
 
 const Input = styled.div`
-  margin-top: 20px;
+  margin-top: 10px;
 `;
 const Logo1 = styled.div`
   margin-top: 4px;
@@ -289,13 +288,13 @@ const Logo1 = styled.div`
 `;
 const InputG = styled.div`
   width: 100%;
-  height: 50px;
+  height: 40px;
   background-color: #fff;
   border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 `;
 
 const Text3 = styled.div`
@@ -308,7 +307,7 @@ const Text2 = styled.div`
   font-size: 16px;
   font-weight: 800;
   color: #9ea4b8;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 `;
 const Text1 = styled.div`
   font-size: 35px;
@@ -322,14 +321,16 @@ const Text1 = styled.div`
 const Card = styled.form`
   width: 400px;
   height: fit-content;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  /* padding-bottom: 20px; */
-  /* border: 1px solid red; */
+  /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; */
 
+  background-color: #f6f7ff;
+  border-radius: 10px;
   padding: 30px;
-  padding-top: 100px;
-  background-color: #dde7eb;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  /* padding-top: 100px; */
+  /* background-color: #dde7eb; */
   /* background-color: red; */
 
   @media screen and (max-width: 500px) {
@@ -343,10 +344,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(${pic});
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-top: 30px;
+  /* margin-bottom: 30px; */
 
   @media screen and (max-width: 500px) {
     width: 100%;

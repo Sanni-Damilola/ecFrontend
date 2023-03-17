@@ -55,13 +55,13 @@ const SignIn = () => {
       <Container>
         <Card onSubmit={Submit}>
           <Text1>Sign in to your account</Text1>
-          <Text2>Login to your account for a faster checkout</Text2>
-          <InputG>
+          {/* <Text2>Login to your account for a faster checkout</Text2> */}
+          {/* <InputG>
             <Logo1>
               <FcGoogle />
             </Logo1>
             <Text3>Sign in with Google</Text3>
-          </InputG>
+          </InputG> */}
 
           {/* Div holds */}
           <DivHold>
@@ -143,7 +143,7 @@ const Btn = styled.button`
   background-color: #4a6cf7;
   /* padding: 10px 170px; */
   width: 400px;
-  height: 60px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -230,7 +230,7 @@ const InputHold = styled.div`
 
   input {
     width: 95%;
-    height: 50px;
+    height: 40px;
     background-color: #fff;
     border: none;
     padding-left: 20px;
@@ -266,7 +266,7 @@ const Logo1 = styled.div`
 `;
 const InputG = styled.div`
   width: 100%;
-  height: 50px;
+  height: 30px;
   background-color: #fff;
   border-radius: 5px;
   display: flex;
@@ -299,13 +299,12 @@ const Text1 = styled.div`
 const Card = styled.form`
   width: 400px;
   height: fit-content;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  /* padding-bottom: 20px; */
-  /* border: 1px solid red; */
+  border-radius: 10px;
 
   padding: 30px;
-  background-color: #dde7eb;
+  background-color: #f6f7ff;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   /* background-color: red; */
 
   @media screen and (max-width: 500px) {
@@ -319,7 +318,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 
   @media screen and (max-width: 500px) {
     width: 100%;

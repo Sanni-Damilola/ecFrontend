@@ -26,9 +26,10 @@ const Header = () => {
   return (
     <Container
       boxShadow={showBoxShadow ? "value" : ""}
-      bc={showBoxShadow ? "value" : ""}>
+      bc={showBoxShadow ? "value" : ""}
+    >
       <Wrapper>
-        <Logo src={logo} />
+        <Logo>E-charging</Logo>
         <NavWrapper>
           <Link to={"/"}>
             <Nav>Home</Nav>
@@ -158,8 +159,10 @@ const Wrapper = styled.div`
     width: 80%;
   }
 `;
-const Logo = styled.img`
-  height: 35px;
+const Logo = styled.h1`
+  /* height: 35px; */
+  font-size: 30px;
+  font-weight: bolder;
   cursor: pointer;
 `;
 const NavWrapper = styled.div`
