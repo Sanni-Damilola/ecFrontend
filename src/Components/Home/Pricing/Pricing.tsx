@@ -276,7 +276,7 @@ const Btn = styled.button`
   margin-bottom: 20px;
 
   @media screen and (max-width: 500px) {
-    padding: 10px 65px;
+    padding: 10px 50px;
   }
 `;
 const Icons = styled.div`
@@ -355,8 +355,8 @@ const Dollar = styled.div`
 const Card = styled.div`
   width: 330px;
   height: fit-content;
-  margin: 20px;
-  padding: 20px;
+  margin: 5px;
+  padding: 10px;
   border-radius: 5px;
   background-color: #ffff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -383,14 +383,15 @@ const CardHolder = styled.div`
   justify-content: center;
   background-color: #fff;
   align-items: center;
+  flex-wrap: wrap;
 
   @media screen and (max-width: 500px) {
-    displa: block;
+    display: block;
     width: 100%;
     align-items: center;
     justify-content: center;
 
-    /* background-color: green; */
+    background-color: green;
   }
   @media screen and (max-width: 780px) {
     display: block;
@@ -401,14 +402,14 @@ const CardHolder = styled.div`
   }
 `;
 const Text2 = styled.div`
-  /* width: 300px; */
+  width: 200px;
   font-size: 18px;
   color: #b7b6b6;
   font-weight: 600;
   /* margin-bottom: 20px; */
 
   @media screen and (max-width: 760px) {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   @media screen and (max-width: 500px) {
@@ -419,6 +420,7 @@ const Text2 = styled.div`
   }
 `;
 const Text1 = styled.div`
+  width: 200px;
   font-size: 40px;
   font-weight: bolder;
   color: #000;
