@@ -26,6 +26,7 @@ const DashSiderBar = () => {
     setAll(false);
     setDash(true);
     nav("/dashboard");
+    // bvbbv
   };
   const gotoAll = () => {
     setPhone(false);
