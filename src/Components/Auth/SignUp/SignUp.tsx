@@ -16,6 +16,8 @@ import { User } from "../../Global/ReduxState/State";
 import { UseAppDispach } from "../../Global/ReduxState/Store";
 import { Link } from "react-router-dom";
 import logo1 from "../../images/newlogo.svg";
+import { Link, useNavigate } from "react-router-dom";
+
 const SignUp = () => {
   const dispatch = UseAppDispach();
   const schema = yup
@@ -44,13 +46,15 @@ const SignUp = () => {
 
     onSuccess: (myData) => {
       dispatch(User(myData.data));
-      console.log(myData.data);
+      // console.log(myData.data);
     },
   });
 
+  const navigate = useNavigate();
   const Submit = handleSubmit(async (data) => {
     posting.mutate(data);
     reset();
+    navigate("/signin");
   });
 
   return (

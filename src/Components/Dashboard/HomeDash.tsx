@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import styled from "styled-components";
 import Card2x from "./Props/Card2x";
@@ -6,6 +6,8 @@ import { IoIosPeople } from "react-icons/io";
 import { MdLaptopMac } from "react-icons/md";
 import { GiElectric } from "react-icons/gi";
 import { HiLockClosed } from "react-icons/hi";
+
+import pic from "../images/sso.jpg";
 
 const HomeDash = () => {
   return (
@@ -19,16 +21,18 @@ const HomeDash = () => {
             watch your progress and learn everything we <br /> know about you
             and your information
           </span>
-          <Discover>
-            Discover
-            <Icon>
-              <BsArrowUpRight />
-            </Icon>
-          </Discover>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <Discover>
+              Discover
+              <Icon>
+                <BsArrowUpRight />
+              </Icon>
+            </Discover>
+          </div>
         </Up>
         <Down>
           <Wrapper2x>
-            <div style={{ width: "80%" }}>
+            <div style={{ width: "96%" }}>
               <Title>
                 <div>Data classification</div>
                 <div>. . .</div>
@@ -37,7 +41,7 @@ const HomeDash = () => {
                 <Card2x
                   iconx={<IoIosPeople />}
                   text="Public"
-                  color="pink"
+                  color="#db009ace"
                   wide="90px"
                   high="38px"
                 />
@@ -63,7 +67,29 @@ const HomeDash = () => {
                   high="38px"
                 />
               </Cards>
-              <Rest></Rest>
+              <Rest>
+                <Title>
+                  <div>Top Devices</div>
+                  <div>. . .</div>
+                </Title>
+                <Items>
+                  <OtherItemz>
+                    <Picz>
+                      <img src={pic} />
+                    </Picz>
+                    <Detailz>
+                      <Boldz>Tecno Spark9 pro</Boldz>
+                      <Faintz>01.00pm CAT</Faintz>
+                    </Detailz>
+                  </OtherItemz>
+                  <OtherItemz>
+                    <Numberz>P001</Numberz>
+                    <Indicator>
+                      <GiElectric />
+                    </Indicator>
+                  </OtherItemz>
+                </Items>
+              </Rest>
             </div>
           </Wrapper2x>
         </Down>
@@ -98,7 +124,7 @@ const Box = styled.div`
   width: 200px;
   height: 250px;
   border-radius: 10px;
-  background-color: green;
+  background-color: #07b307;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -189,6 +215,7 @@ const Icon = styled.div`
 const Left = styled.div`
   width: 50%;
   padding-left: 60px;
+  padding-top: 60px;
 `;
 const Up = styled.div`
   width: 100%;
@@ -206,9 +233,60 @@ const Up = styled.div`
     color: rgb(0, 0, 0, 0.5);
   }
 `;
-const Down = styled.div``;
+
+const Down = styled.div`
+  margin-top: 40px;
+`;
 const Right = styled.div`
-  margin-right: 50px;
+  height: 100%;
+  padding-right: 50px;
+  padding-top: 40px;
+  background-color: #eeeeee;
+`;
+const Heading = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
+const Items = styled.div`
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+const OtherItemz = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const Picz = styled.div`
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+  border-radius: 50%;
+  img {
+    object-fit: cover;
+    border-radius: 50%;
+    width: 100%;
+  }
+`;
+const Detailz = styled.div``;
+const Boldz = styled.div`
+  font-size: 13px;
+  font-weight: bold;
+`;
+const Faintz = styled.div`
+  font-size: 10px;
+  font-weight: bold;
+  color: silver;
+`;
+const Numberz = styled.div`
+  font-weight: bold;
+  font-size: 16px;
+`;
+const Indicator = styled.div`
+  margin-left: 15px;
+  color: #ccae04;
+  font-size: 25px;
 `;
 const Wrapper2x = styled.div`
   display: flex;
@@ -226,15 +304,16 @@ const Cards = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 40px;
 `;
-const Rest = styled.div``;
+const Rest = styled.div`
+  margin-top: 40px;
+`;
 
 const Container = styled.div`
-
   background-color: #f1f1fd;
   width: 100%;
-  padding-top: 100px;
+
   height: fit-content;
   padding-bottom: 30px;
   display: flex;
@@ -242,5 +321,6 @@ const Container = styled.div`
     width: calc(100vw - 220px);
     margin-left: 220px;
     margin-top: 0px;
+    height: 100vh;
   }
 `;

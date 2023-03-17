@@ -42,13 +42,18 @@ const SignIn = () => {
 
     onSuccess: (myData) => {
       dispatch(User(myData.data));
+
       console.log("here", myData.data);
+      // console.log("here", myData.data)
     },
   });
+
+  const navgate = useNavigate();
 
   const Submit = handleSubmit(async (data) => {
     posting.mutate(data);
     reset();
+    navgate("/dahboard");
   });
 
   return (
