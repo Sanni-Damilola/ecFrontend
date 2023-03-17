@@ -8,12 +8,16 @@ const HomeDash = () => {
         Left
         <Up>Up</Up>
         <Down>
-          <Title>
-            <div>Data classification</div>
-            <div>...</div>
-          </Title>
-          <Cards></Cards>
-          <Rest></Rest>
+          <Wrapper2x>
+            <div style={{ width: "80%" }}>
+              <Title>
+                <div>Data classification</div>
+                <div>. . .</div>
+              </Title>
+              <Cards></Cards>
+              <Rest></Rest>
+            </div>
+          </Wrapper2x>
         </Down>
       </Left>
       <Right>Right</Right>
@@ -28,11 +32,17 @@ const Left = styled.div`
 const Up = styled.div``;
 const Down = styled.div``;
 const Right = styled.div``;
+const Wrapper2x = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 const Title = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: bold;
+  font-size: 14px;
 `;
 const Cards = styled.div``;
 const Rest = styled.div``;
