@@ -5,11 +5,9 @@ import styled from "styled-components";
 import { BsPersonCircle } from "react-icons/bs";
 import { RiLogoutCircleRFill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
-import { BsPlusCircleFill } from "react-icons/bs";
 import { useAppSelector } from "../Global/ReduxState/Store";
 import { useQuery } from "@tanstack/react-query";
 import { GetOneUser } from "../Api/Api";
-import PostDash from "./Props/PostDash";
 
 const DashSiderBar = () => {
   const [all, setAll] = useState(false);
@@ -26,7 +24,6 @@ const DashSiderBar = () => {
     setAll(false);
     setDash(true);
     nav("/dashboard");
-    // bvbbv
   };
   const gotoAll = () => {
     setPhone(false);
@@ -87,10 +84,6 @@ const DashSiderBar = () => {
               </Circle>
               <Name>{user?.userName?.toUpperCase()}</Name>
               <Title>Attendant</Title>
-
-              <div style={{ fontSize: "19px" }}>
-                <BsPlusCircleFill />
-              </div>
             </div>
           </Profile>
 
@@ -127,34 +120,19 @@ const DashSiderBar = () => {
             </DashHolds>
           </Dashboard>
         </Ups>
-        <Logout>
+        <Logout  >
           <div style={{ fontSize: "16px", color: "black" }}>
             <RiLogoutCircleRFill />
           </div>
           <div style={{ marginLeft: "8px", marginBottom: "5px" }}>Log Out</div>
         </Logout>
       </Wrapper>
-
-      <Absolute>
-        <div>
-          <PostDash />
-        </div>
-      </Absolute>
     </Container>
   );
 };
 
 export default DashSiderBar;
-const Absolute = styled.div`
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  z-index: 10;
-`;
 const Container = styled.div`
   height: 100vh;
   width: 220px;
@@ -223,7 +201,6 @@ const Title = styled.div`
   font-size: 7px;
   font-weight: bold;
   border-radius: 15px;
-  margin-bottom: 5px;
   background-color: #d1d1048b;
 `;
 const Dashboard = styled.div`
