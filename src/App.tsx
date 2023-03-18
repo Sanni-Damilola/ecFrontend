@@ -22,8 +22,8 @@ function App() {
 
   return (
     <Container>
-      {/* <AllRoutes /> */}
-      <DashBoard />
+      <AllRoutes />
+      {/* <DashBoard /> */}
       {scroll ? (
         <Up offset={-100} duration={500} smooth={true} to="/home">
           <Icon>
