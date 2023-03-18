@@ -54,14 +54,10 @@ const DashSiderBar = () => {
 
   const user = useAppSelector((state) => state.currentUser);
 
-  console.log("user", user);
-
   const fetchUser = useQuery({
     queryKey: ["user"],
     queryFn: () => GetOneUser(user?._id),
   });
-
-  console.log("here", fetchUser);
 
   return (
     <Container>

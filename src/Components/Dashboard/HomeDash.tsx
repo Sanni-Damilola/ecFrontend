@@ -126,7 +126,7 @@ const Box = styled.div`
   width: 200px;
   height: 250px;
   border-radius: 10px;
-  background-color: rgb(87,172,166);
+  background-color: rgb(87, 172, 166);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -312,13 +312,12 @@ const Container = styled.div`
   background-color: #f1f1fd;
   width: 100%;
 
-  height: fit-content;
-  padding-bottom: 30px;
+  height: 100%;
   display: flex;
-  @media screen and (min-width: 700px) {
+  /* @media screen and (min-width: 700px) {
     width: calc(100vw - 220px);
     margin-left: 220px;
     margin-top: 0px;
     height: 100vh;
-  }
+  } */
 `;
