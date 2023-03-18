@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+/** @format */
+
+import React from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import styled from "styled-components";
 import Card2x from "./Props/Card2x";
@@ -124,7 +126,7 @@ const Box = styled.div`
   width: 200px;
   height: 250px;
   border-radius: 10px;
-  background-color: #07b307;
+  background-color: rgb(87,172,166);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -140,7 +142,7 @@ const Box2 = styled.div`
   width: 300px;
   height: 250px;
   border-radius: 10px;
-  background-color: pink;
+  background-color: rgb(234, 69, 74);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -243,11 +245,7 @@ const Right = styled.div`
   padding-top: 40px;
   background-color: #eeeeee;
 `;
-const Heading = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-`;
+
 const Items = styled.div`
   margin-top: 40px;
   display: flex;
